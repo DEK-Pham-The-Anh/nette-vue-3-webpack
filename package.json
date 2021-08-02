@@ -1,0 +1,62 @@
+{
+  "name": "nette-vue-3",
+  "version": "1.0.0",
+  "description": "Nette + Vue 3",
+  "main": "index.js",
+  "scripts": {
+    "vue-helloworld-app-devel": "webpack --config ./scripts/webpack.vue.config.js --env appname=helloworld --env environment=development",
+    "vue-helloworld-store-devel": "webpack --config ./scripts/webpack.store.config.js --env appname=helloworld --env environment=development",
+    "vue-helloworld-app-prod": "webpack --config ./scripts/webpack.vue.config.js --env appname=helloworld --env environment=production",
+    "vue-helloworld-store-prod": "webpack --config ./scripts/webpack.store.config.js --env appname=helloworld --env environment=production",
+    "vue-helloworld-devel": "npm run vue-helloworld-app-devel && npm run vue-helloworld-store-devel && npm run vue-store-devel",
+    "vue-helloworld-prod": "npm run vue-helloworld-app-prod && npm run vue-helloworld-store-prod && npm run vue-store-prod",
+    "vue-todolist-app-devel": "webpack --config ./scripts/webpack.vue.config.js --env appname=todolist --env environment=development",
+    "vue-todolist-store-devel": "webpack --config ./scripts/webpack.store.config.js --env appname=todolist --env environment=development",
+    "vue-todolist-app-prod": "webpack --config ./scripts/webpack.vue.config.js --env appname=todolist --env environment=production",
+    "vue-todolist-store-prod": "webpack --config ./scripts/webpack.store.config.js --env appname=todolist --env environment=production",
+    "vue-todolist-devel": "npm run vue-todolist-app-devel && npm run vue-todolist-store-devel && npm run vue-store-devel",
+    "vue-todolist-prod": "npm run vue-todolist-app-prod && npm run vue-todolist-store-prod && npm run vue-store-prod",
+    "vue-store-devel": "webpack --config ./scripts/webpack.store.config.js --env appname=Global --env environment=development",
+    "vue-store-prod": "webpack --config ./scripts/webpack.store.config.js --env appname=Global --env environment=production",
+    "css-test-new": "NODE_ENV=production node ./scripts/webpack.css.config.js",
+    "js": "node ./scripts/uglify.js",
+    "css": "node ./scripts/build.css.js",
+    "build-prod": "npm run js && npm run vue-helloworld-prod && npm run vue-todolist-prod"
+  },
+  "keywords": [
+    "css",
+    "js",
+    "cache",
+    "dek.cz"
+  ],
+  "author": "Ondrej Pazourek",
+  "dependencies": {
+    "@vue/compat": "^3.1.5",
+    "@vue/compiler-sfc": "^3.1.5",
+    "autoprefixer": "^7.1.2",
+    "core-js": "^3.16.0",
+    "css-loader": "^0.28.11",
+    "cssnano": "^5.0.6",
+    "postcss": "^8.3.5",
+    "postcss-css-variables": "^0.13.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^2.1.5",
+    "regenerator-runtime": "^0.13.9",
+    "style-loader": "^0.21.0",
+    "uglify-js": "^3.3.28",
+    "vue-i18n": "^9.1.7",
+    "vue-loader": "^16.0.0",
+    "vue-resource": "^1.5.1",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
+    "@babel/plugin-transform-object-assign": "^7.14.5",
+    "@babel/preset-env": "^7.14.9",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2"
+  }
+}
