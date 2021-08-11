@@ -1,9 +1,11 @@
+import store from '../Global/Store';
+
 const todolist = {
     state: {
         aaa: 'TODOLIST APP'
     }
 };
 
-STORE_Global.registerModule('todolist', todolist);
+store.registerModule('todolist', todolist);
 
-module.exports = todolist;
+export default todolist;

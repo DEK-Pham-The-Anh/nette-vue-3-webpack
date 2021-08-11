@@ -9,6 +9,7 @@
 
 <script>
 export default {
+	name: 'BaseInputText',
   props: {
     value: {
       type: String,
@@ -25,5 +26,5 @@ export default {
       }
     }
   }
-}
+};
 </script>

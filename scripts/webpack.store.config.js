@@ -1,12 +1,11 @@
 //DO NOT TOUCH THIS IF DONT KNOW WHAT ARE YOU DOING!!!!!!!!!!
-require("core-js/stable");
-require("regenerator-runtime/runtime");
+
 var path = require('path');
-//https://webpack.js.org/api/cli/
+
 module.exports = function (env) {
 	return {
 		mode: env.environment,
-		entry: ['./www/vue-development/app/' + env.appname + '/Store.js'],
+		entry: [require.resolve('core-js/stable'), require.resolve('regenerator-runtime/runtime'), './www/vue-development/app/' + env.appname + '/Store.js'],
 		module: {
 			rules: [
 				{

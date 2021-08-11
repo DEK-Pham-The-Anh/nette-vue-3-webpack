@@ -1,3 +1,5 @@
+import Vuex from 'vuex';
+
 const store = new Vuex.Store({
     modules : {
         global: {
@@ -39,4 +41,5 @@ const store = new Vuex.Store({
         }
     }
 }); 
-module.exports = store;
+
+export default store;

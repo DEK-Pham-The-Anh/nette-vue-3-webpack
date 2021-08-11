@@ -20,12 +20,13 @@
 </template>
 
 <script>
-import BaseInputText from './BaseInputText.vue'
-import TodoListItem from './TodoListItem.vue'
+import BaseInputText from './BaseInputText.vue';
+import TodoListItem from './TodoListItem.vue';
 
-let nextTodoId = 1
+let nextTodoId = 1;
 
 export default {
+	name: 'TodoList',
 	components: {
 		BaseInputText, TodoListItem
 	},
@@ -65,5 +66,5 @@ export default {
 			})
 		}
 	}
-}
+};
 </script>

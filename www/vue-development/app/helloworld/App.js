@@ -1,9 +1,11 @@
+import Vue from 'vue';
 import App from './components/App.vue';
-const { createApp } = Vue;
-import translations from './i18n.js'
+import store from '../Global/Store';
+import { createI18n } from 'vue-i18n';
+import translations from './i18n.js';
 
-const i18n = VueI18n.createI18n({
-  locale: STORE_Global.getters['global/lang'],
+const i18n = createI18n({
+  locale: store.getters['global/lang'],
   messages: translations,
 })
 
@@ -15,10 +17,4 @@ const i18n = VueI18n.createI18n({
 //   components: { App }
 // })
 
-const app = createApp(App);
-
-app.use(STORE_Global);
-app.use(i18n);
-app.component(App);
-
-app.mount('#vue-hello-world')
+Vue.createApp(App).use(store).use(i18n).mount('#vue-hello-world');

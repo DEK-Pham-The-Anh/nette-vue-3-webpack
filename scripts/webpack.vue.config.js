@@ -1,13 +1,12 @@
 //DO NOT TOUCH THIS IF DONT KNOW WHAT ARE YOU DOING!!!!!!!!!!
-require("core-js/stable");
-require("regenerator-runtime/runtime");
+
 const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader')
-//https://webpack.js.org/api/cli/
+const { VueLoaderPlugin } = require('vue-loader');
+
 module.exports = function (env) {
 	return {
 		mode: env.environment,
-		entry: ['./www/vue-development/app/' + env.appname + '/App.js'],
+		entry: [require.resolve('core-js/stable'), require.resolve('regenerator-runtime/runtime'), './www/vue-development/app/' + env.appname + '/App.js'],
 		module: {
 			rules: [
 				{
@@ -30,7 +29,7 @@ module.exports = function (env) {
 		},
 		resolve: {
 			alias: {
-				'vue$': '@vue/compat'
+				'vue': '@vue/compat'
 			},
 		},
 		output: {
